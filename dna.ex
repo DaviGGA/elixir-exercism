@@ -1,3 +1,5 @@
+# NOT READY
+
 defmodule DNA do
   def encode_nucleotide(code_point) do
     case code_point do
@@ -41,6 +43,4 @@ defmodule DNA do
     code = decode_nucleotide(first);
     do_decode(rest, [code | char_list])
   end
-
-
 end
