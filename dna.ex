@@ -1,4 +1,3 @@
-# NOT READY
 
 defmodule DNA do
   def encode_nucleotide(code_point) do
@@ -33,14 +32,12 @@ defmodule DNA do
   end
 
   def decode(dna) do
-    do_decode(dna, [])
+    do_decode(dna, ~c'')
   end
 
   defp do_decode(<<>>, char_list), do: char_list
 
-  defp do_decode(dna_bitstring, char_list) do
-    <<first::4, rest::bitstring>> = dna_bitstring;
-    code = decode_nucleotide(first);
-    do_decode(rest, [code | char_list])
+  defp do_decode(<<first::4, rest::bitstring>>, char_list) do
+    do_decode(rest, char_list ++ [decode_nucleotide(first)])
   end
 end
