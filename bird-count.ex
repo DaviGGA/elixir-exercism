@@ -24,4 +24,6 @@ defmodule BirdCount do
   end
 
   defp busy_day?(day_visits), do: day_visits >= 5
+
+  
 end
